@@ -1,14 +1,8 @@
-to install flask:
-	cmd:	pip install flask
-	bash:	pip3 install flask
+Hello, this is Stock MarketPlace
 
-to run the file use the next command:
-in cmd:
-	python -m flask --app main --debug run --host=0.0.0.0
-	or
-	python main.py 
+Using this app you can purchase and track as much stock papers as you want
+(of course as long as you have prices or until we don't have economic crisis as in 2008 or nowadays)
 
-in bash/terminal:
-	python3 -m flask --app main --debug run --host=0.0.0.0
-	or 
-	python3 main.py
+
+Fell free to contact us using marketplace@market.kz e-mail
+Project was done by me, Abylay(backend), my collegues Ernar(frontend) and Askhat(presentation)
