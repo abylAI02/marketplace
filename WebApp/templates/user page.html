@@ -1,0 +1,59 @@
+<!-- INHERITING CONTENT FROM EXISTING FILE BASE.HTML -->
+{% extends "base.html"%}
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{% block title%}
+User Page
+{% endblock %}
+
+<!-- PUTTING DATA IN BLOCK(S) PREDEFINED IN BASE.HTML -->
+{%block main_body%}
+
+
+<main id="main">
+
+  <section class="inner-page">
+    <div class="container">
+      <p>
+       <h4> <b>{{context.user_fname}}</b></h4>
+
+        {% if context%}
+        <table>
+          <tr>
+              <td>Username:</td> <td>{{context.login}}</td>
+          </tr>
+
+          <tr>
+              <td>First Name:</td> <td>{{context.user_fname}}</td>
+          </tr>
+
+          <tr>
+              <td>Second Name:</td> <td> {{context.user_sname}}</td>
+          </tr>
+
+          <tr>
+              <td>Cars owned:</td>
+              <td> <ol>
+                {% if context.user_cars%}
+                  {% for car in context.user_cars%}
+
+                    <li>Car Vendor: {{car.car_vendor}} | Car Model: {{car.car_model}} | Car Owner ID: {{car.car_owner}}</li>
+
+                  {% endfor %}
+                {% else %}
+                    <button type="button" class="btn btn-outline-danger my-2 my-sm-0" style="margin-right:  20px; " data-toggle="modal" href="{{ url_for('upload')}}" onclick="window.location.href='logout';">Create CV</button>
+                {% endif %}
+              </ol>
+              </td>
+          </tr>
+      </table>
+
+          {% endif %}
+      </p>
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+<!-- CLOSING THE BLOCK (MUST BE DONE!!!) -->
+{% endblock %}
